@@ -1,0 +1,606 @@
+
+.box_skitter {
+    height: 320px;
+    position: relative;
+    width: 1200px;
+}
+.box_skitter img {
+    border-radius: 0;
+    max-width: none;
+}
+.box_skitter ul {
+    display: none;
+}
+.box_skitter .container_skitter {
+    overflow: hidden;
+    position: relative;
+}
+.box_skitter .image {
+    overflow: hidden;
+}
+.box_skitter .image img {
+    display: none;
+}
+.box_skitter .box_clone {
+    display: none;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    z-index: 20;
+}
+.box_skitter .box_clone img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+}
+.box_skitter .prev_button {
+    height: 42px;
+    left: 35px;
+    margin-top: -25px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999em;
+    top: 50%;
+    transition: all 0.2s ease 0s;
+    width: 42px;
+    z-index: 152;
+}
+.box_skitter .next_button {
+    height: 42px;
+    margin-top: -25px;
+    overflow: hidden;
+    position: absolute;
+    right: 35px;
+    text-indent: -9999em;
+    top: 50%;
+    transition: all 0.2s ease 0s;
+    width: 42px;
+    z-index: 152;
+}
+.box_skitter .prev_button:hover, .box_skitter .next_button:hover {
+    opacity: 0.5 !important;
+}
+.box_skitter .info_slide {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #fff;
+    font: bold 11px arial;
+    left: 15px;
+    opacity: 0.75;
+    padding: 5px 0 5px 5px;
+    position: absolute;
+    top: 15px;
+    z-index: 100;
+}
+.box_skitter .info_slide .image_number {
+    background: #333 none repeat scroll 0 0;
+    border-radius: 2px;
+    cursor: pointer;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 2px 10px;
+    transition: all 0.2s ease 0s;
+}
+.box_skitter .info_slide .image_number:hover {
+    background: #000 none repeat scroll 0 0;
+}
+.box_skitter .info_slide .image_number_select, .box_skitter .info_slide .image_number_select:hover {
+    background: #cc3333 none repeat scroll 0 0;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 2px 10px;
+}
+.box_skitter .container_thumbs {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.box_skitter .info_slide_thumb {
+    border-radius: 0;
+    height: 50px;
+    left: 0;
+    opacity: 1;
+    overflow: hidden;
+    padding: 0 !important;
+    top: 0;
+}
+.box_skitter .info_slide_thumb .image_number {
+    border-radius: 0 !important;
+    height: 50px;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0 !important;
+    position: relative;
+    width: 100px;
+}
+.box_skitter .info_slide_thumb .image_number img {
+    height: 100px;
+    left: -30px;
+    position: absolute;
+    top: -30px;
+}
+.box_skitter .box_scroll_thumbs {
+    padding: 0;
+}
+.box_skitter .box_scroll_thumbs .scroll_thumbs {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(-90deg, #555, #fff) repeat scroll 0 0;
+    border: 0 solid #333;
+    bottom: 60px;
+    cursor: pointer;
+    height: 10px;
+    left: 50px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999em;
+    width: 200px;
+    z-index: 101;
+}
+.box_skitter .info_slide_dots {
+    border-radius: 0;
+    bottom: -40px;
+    opacity: 0.8;
+    padding: 5px 0 5px 5px;
+    position: absolute;
+    z-index: 151;
+}
+.box_skitter .info_slide_dots .image_number {
+    background: #333 none repeat scroll 0 0;
+    border-radius: 50px;
+    cursor: pointer;
+    float: left;
+    height: 18px;
+    margin: 0 5px 0 0;
+    overflow: hidden;
+    text-indent: -9999em;
+    transition: all 0.2s ease 0s;
+    width: 18px;
+}
+.box_skitter .info_slide_dots .image_number:hover {
+    background: #000 none repeat scroll 0 0;
+}
+.box_skitter .info_slide_dots .image_number_select, .box_skitter .info_slide_dots .image_number_select:hover {
+    background: #cc3333 none repeat scroll 0 0;
+    float: left;
+    margin: 0 5px 0 0;
+}
+.loading {
+    background: rgba(0, 0, 0, 0) url("/imagesr/ajax-loader.gif") no-repeat scroll left top;
+    color: #fff;
+    height: 32px;
+    margin: -16px;
+    overflow: hidden;
+    position: absolute;
+    right: 50%;
+    text-indent: -9999em;
+    top: 50%;
+    width: 32px;
+    z-index: 10000;
+}
+.box_skitter .label_skitter {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    z-index: 150;
+}
+.box_skitter .label_skitter {
+    background: #000 none repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    display: none;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 150;
+}
+.box_skitter .label_skitter p {
+    font: 22px arial,tahoma;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 10px;
+}
+.box_skitter .progressbar {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 20px;
+    height: 5px;
+    left: 15px;
+    position: absolute;
+    top: 5px;
+    width: 200px;
+    z-index: 99;
+}
+.box_skitter .preview_slide {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #222;
+    bottom: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    display: none;
+    height: 100px;
+    left: -40px;
+    overflow: hidden;
+    position: absolute;
+    width: 100px;
+    z-index: 152;
+}
+.box_skitter .preview_slide ul {
+    display: block !important;
+    height: 100px !important;
+    left: 0;
+    list-style: outside none none !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: 0;
+}
+.box_skitter .preview_slide ul li {
+    display: block !important;
+    float: left !important;
+    height: 100px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative !important;
+    width: 100px !important;
+}
+.box_skitter .preview_slide ul li img {
+    height: 150px !important;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: auto !important;
+}
+#overlay_skitter {
+    background: #000 none repeat scroll 0 0;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9998;
+}
+.box_skitter .focus_button {
+    height: 42px;
+    margin-top: -25px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999em;
+    top: 50%;
+    transition: all 0.2s ease 0s;
+    width: 42px;
+    z-index: 100;
+}
+.box_skitter .play_pause_button {
+    height: 42px;
+    margin-top: -25px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999em;
+    top: 50%;
+    transition: all 0.2s ease 0s;
+    width: 42px;
+    z-index: 151;
+}
+.box_skitter .play_pause_button.play_button {
+}
+.box_skitter .play_pause_button:hover {
+    opacity: 0.5 !important;
+}
+.box_skitter .focus_button:hover {
+    opacity: 0.5 !important;
+}
+.box_skitter_large {
+    height: 320px;
+    width: 1200px;
+}
+.box_skitter_small {
+    height: 100px;
+    width: 200px;
+}
+.box_skitter .focus_button, .box_skitter .next_button, .box_skitter .prev_button, .box_skitter .play_pause_button {
+    background: rgba(0, 0, 0, 0) url("/images/sprite-default.png") no-repeat scroll 0 0;
+    display: block;
+}
+.box_skitter .next_button {
+    background-position: 0 -42px;
+    height: 42px;
+    width: 42px;
+}
+.box_skitter .prev_button {
+    background-position: -42px -42px;
+    height: 42px;
+    width: 42px;
+}
+.box_skitter .play_pause_button {
+    background-position: 0 0;
+    height: 42px;
+    width: 42px;
+}
+.box_skitter .play_pause_button.play_button {
+    background-position: 0 -84px;
+    height: 42px;
+    width: 42px;
+}
+.box_skitter .focus_button {
+    background-position: -42px 0;
+    height: 42px;
+    width: 42px;
+}
+.skitter-minimalist .prev_button, .skitter-minimalist .next_button, .skitter-minimalist .play_pause_button, .skitter-minimalist .focus_button {
+    background: rgba(0, 0, 0, 0) url("/images/sprite-minimalist.png") no-repeat scroll 0 0 !important;
+    display: block;
+}
+.skitter-minimalist .prev_button {
+    background-position: 0 0 !important;
+    height: 28px !important;
+    left: -45px !important;
+    width: 24px !important;
+}
+.skitter-minimalist .next_button {
+    background-position: 0 -28px !important;
+    height: 28px !important;
+    right: -45px !important;
+    width: 24px !important;
+}
+.skitter-minimalist .play_pause_button {
+    background-position: 0 -74px !important;
+    height: 18px !important;
+    width: 18px !important;
+}
+.skitter-minimalist .play_pause_button.play_button {
+    background-position: 0 -56px !important;
+    height: 18px !important;
+    width: 18px !important;
+}
+.skitter-minimalist .focus_button {
+    background-position: 0 -92px !important;
+    height: 18px !important;
+    width: 18px !important;
+}
+.skitter-minimalist .info_slide {
+    background: transparent none repeat scroll 0 0;
+}
+.skitter-minimalist .info_slide .image_number {
+    background: #000 none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    font-weight: normal;
+}
+.skitter-minimalist .info_slide .image_number:hover {
+    background: #111 none repeat scroll 0 0;
+}
+.skitter-minimalist .info_slide .image_number_select, .skitter-minimalist .info_slide .image_number_select:hover {
+    background: #cc3333 none repeat scroll 0 0;
+}
+.skitter-minimalist .info_slide_dots .image_number {
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+    height: 14px;
+    width: 14px;
+}
+.skitter-round .prev_button, .skitter-round .next_button, .skitter-round .play_pause_button, .skitter-round .focus_button {
+    background: rgba(0, 0, 0, 0) url("/images/sprite-round.png") no-repeat scroll 0 0;
+    display: block;
+}
+.skitter-round .prev_button {
+    background-position: 0 0;
+    height: 47px;
+    left: -23px;
+    width: 23px;
+}
+.skitter-round .next_button {
+    background-position: -23px 0;
+    height: 47px;
+    right: -23px;
+    width: 23px;
+}
+.skitter-round .next_button:hover, .skitter-round .prev_button:hover {
+    opacity: 1;
+}
+.skitter-round .play_pause_button {
+    background-position: 0 -70px;
+    height: 23px;
+    left: 24px !important;
+    top: 24px;
+    width: 47px;
+}
+.skitter-round .play_pause_button.play_button {
+    background-position: 0 -47px;
+    height: 23px;
+    top: 24px;
+    width: 47px;
+}
+.skitter-round .focus_button {
+    background-position: 0 -93px;
+    height: 23px;
+    left: 82px !important;
+    top: 24px;
+    width: 47px;
+}
+.skitter-round .info_slide {
+    background: transparent none repeat scroll 0 0;
+}
+.skitter-round .info_slide .image_number {
+    background: #999 none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    font-weight: normal;
+}
+.skitter-round .info_slide .image_number:hover {
+    background: #333 none repeat scroll 0 0;
+}
+.skitter-round .info_slide .image_number_select, .skitter-round .info_slide .image_number_select:hover {
+    background: #111 none repeat scroll 0 0;
+}
+.skitter-round .info_slide_dots .image_number {
+    background: #999 none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+    height: 14px;
+    width: 14px;
+}
+.skitter-round .info_slide_dots .image_number:hover {
+    background: #333 none repeat scroll 0 0;
+}
+.skitter-round .info_slide_dots .image_number_select, .skitter-round .info_slide_dots .image_number_select:hover {
+    background: #111 none repeat scroll 0 0;
+}
+.skitter-round .progressbar {
+    background: #333 none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    left: 0;
+    top: -10px;
+}
+.skitter-clean .prev_button, .skitter-clean .next_button, .skitter-clean .play_pause_button, .skitter-clean .focus_button {
+    background: rgba(0, 0, 0, 0) url("/images/sprite-clean.png") no-repeat scroll 0 0;
+    display: block;
+}
+.skitter-clean .prev_button {
+    background-position: 0 0;
+    height: 46px;
+    width: 47px;
+}
+.skitter-clean .next_button {
+    background-position: 0 -46px;
+    height: 46px;
+    width: 47px;
+}
+.skitter-clean .play_pause_button {
+    background-position: 0 -133px;
+    height: 41px;
+    width: 41px;
+}
+.skitter-clean .play_pause_button.play_button {
+    background-position: 0 -92px;
+    height: 41px;
+    width: 41px;
+}
+.skitter-clean .focus_button {
+    background-position: 0 -174px;
+    height: 41px;
+    width: 41px;
+}
+.skitter-clean .info_slide {
+    background: transparent none repeat scroll 0 0;
+}
+.skitter-clean .info_slide .image_number {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 12px;
+    font-weight: normal;
+}
+.skitter-clean .info_slide .image_number:hover {
+    background: #ccc none repeat scroll 0 0;
+}
+.skitter-clean .info_slide .image_number_select, .skitter-clean .info_slide .image_number_select:hover {
+    background: #111 none repeat scroll 0 0;
+    color: #fff;
+}
+.skitter-clean .info_slide_dots {
+    background: floralwhite none repeat scroll 0 0;
+    bottom: 10px;
+}
+.skitter-clean .info_slide_dots .image_number {
+    background: #999 none repeat scroll 0 0;
+    height: 10px;
+    width: 10px;
+}
+.skitter-clean .info_slide_dots .image_number:hover {
+    background: #333 none repeat scroll 0 0;
+}
+.skitter-clean .info_slide_dots .image_number_select, .skitter-clean .info_slide_dots .image_number_select:hover {
+    background: #111 none repeat scroll 0 0;
+}
+.skitter-clean .progressbar {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    left: 5px;
+    top: 5px;
+}
+.skitter-square .play_pause_button, .skitter-square .next_button, .skitter-square .focus_button, .skitter-square .prev_button {
+    background: rgba(0, 0, 0, 0) url("/images/sprite-square.png") no-repeat scroll 0 0;
+    display: block;
+}
+.skitter-square .play_pause_button {
+    background-position: -55px 0;
+    bottom: auto !important;
+    height: 55px;
+    left: 10px !important;
+    margin-top: 0;
+    right: auto !important;
+    top: 10px !important;
+    width: 55px;
+}
+.skitter-square .play_pause_button.play_button {
+    background-position: 0 0;
+    height: 55px;
+    width: 55px;
+}
+.skitter-square .focus_button {
+    background-position: -55px -55px;
+    bottom: auto !important;
+    height: 55px;
+    left: 65px !important;
+    margin-top: 0;
+    right: auto !important;
+    top: 10px !important;
+    width: 55px;
+}
+.skitter-square .next_button {
+    background-position: 0 -55px;
+    bottom: 10px;
+    height: 55px;
+    left: auto;
+    right: 10px;
+    top: auto;
+    width: 55px;
+}
+.skitter-square .prev_button {
+    background-position: 0 -110px;
+    bottom: 10px;
+    height: 55px;
+    left: auto;
+    right: 65px;
+    top: auto;
+    width: 55px;
+}
+.skitter-square .info_slide {
+    background: transparent none repeat scroll 0 0;
+}
+.skitter-square .info_slide .image_number {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 12px;
+    font-weight: normal;
+}
+.skitter-square .info_slide .image_number:hover {
+    background: #ccc none repeat scroll 0 0;
+}
+.skitter-square .info_slide .image_number_select, .skitter-square .info_slide .image_number_select:hover {
+    background: #111 none repeat scroll 0 0;
+    color: #fff;
+}
+.skitter-square .info_slide_dots .image_number {
+    background: #ccc none repeat scroll 0 0;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+    height: 14px;
+    width: 14px;
+}
+.skitter-square .info_slide_dots .image_number:hover {
+    background: #999 none repeat scroll 0 0;
+}
+.skitter-square .info_slide_dots .image_number_select, .skitter-square .info_slide_dots .image_number_select:hover {
+    background: #555 none repeat scroll 0 0;
+}
+.skitter-square .progressbar {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0;
+    height: 2px;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+}

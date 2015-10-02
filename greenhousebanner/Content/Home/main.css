@@ -1,0 +1,604 @@
+﻿
+@charset "utf-8";
+#divMain {
+    width: 100%;
+}
+#divBody {
+    background: #ebebeb none repeat scroll 0 0;
+    padding: 20px 0;
+}
+.SSCBar {
+    margin: 0 auto;
+    max-width: 1230px;
+    min-width: 320px;
+    position: relative;
+}
+.SSCBar {
+    position: relative;
+}
+.SSCBar .BarItem {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.SSCBar .BarUser {
+    position: relative;
+}
+.SSCBar .BarUser .menu-icon {
+    border: medium none;
+    text-decoration: none;
+}
+.SSCNavBar .BarItem {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px;
+    position: relative;
+}
+.SSCNavBar .BarItem a {
+    color: #666;
+    text-decoration: none;
+}
+.SSCNavBar .BarItem span {
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.SSCUserBar {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    z-index: 1000;
+}
+.SSCUserBar .InputUserInfo {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #999;
+    margin: 0;
+    width: 300px;
+}
+.SSCUserBar .divPersonal {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.SSCUserBar .divPersonal .NarrowUser {
+    position: absolute;
+    right: 20px;
+    top: -9px;
+}
+.SSCUserBar .divPersonal .PersonalForm {
+    padding: 10px;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalLeft {
+    float: left;
+    width: 25%;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalRight {
+    float: right;
+    text-align: left;
+    width: 70%;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalLeft .UserIcon {
+    background: #d7ffeb none repeat scroll 0 0;
+    color: #090;
+    font-size: 55px;
+    padding: 5px;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalRight h3 {
+    color: #666;
+    font-family: BoldFont;
+    font-size: 14px !important;
+    font-weight: normal;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalRight h4 {
+    color: #666;
+    font-size: 13px !important;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalRight a {
+    color: #093;
+    font-size: 13px;
+    text-decoration: none;
+}
+.SSCUserBar .divPersonal .PersonalForm .PersonalRight a:hover {
+    text-decoration: underline;
+}
+.SSCUserBar .InputUserInfo .PersonalOut {
+    background: #ccc none repeat scroll 0 0;
+    padding: 5px;
+    text-align: right;
+}
+.SSCUserBar .InputUserInfo .PersonalOut .LogoutBtn {
+    background: #09c none repeat scroll 0 0;
+    border: 1px solid #ececec;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+}
+#divTopHeader {
+    padding: 10px 5px;
+}
+#HeaderLeft {
+    float: left;
+    position: relative;
+    width: 60%;
+}
+#HeaderRight {
+    float: right;
+    margin-top: 10px;
+    text-align: right;
+    width: 30%;
+}
+#HeaderLeft a {
+    color: #ffcd00;
+    display: inline-block;
+    font-size: 180%;
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 10%;
+}
+#HeaderLeft img {
+    height: 50px;
+    vertical-align: bottom;
+}
+#HeaderLeft a span {
+    display: block;
+    left: 120px;
+    min-width: 180px;
+    position: absolute;
+    top: 10px;
+    white-space: nowrap;
+}
+#divLogin {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+#divLogin ul {
+    float: right;
+}
+#divLogin ul li {
+    float: left;
+}
+#divLogin ul span {
+    color: #ccc;
+    float: left;
+    font-size: 90%;
+    margin: 0 10px;
+}
+#divLogin ul li a {
+    color: #ccc;
+    font-size: 100%;
+    text-decoration: none;
+}
+#divLogin ul li a:hover {
+    text-decoration: underline;
+}
+#divSearch {
+    left: 120px;
+    min-width: 200px;
+    position: absolute;
+    top: 15px;
+    width: 60%;
+}
+#SearchForm {
+    background: #fafafa none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    margin-right: 2%;
+    max-width: 100%;
+    min-width: 200px;
+    padding: 5px;
+    position: relative;
+}
+#SearchForm input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    float: left;
+}
+.btn-search {
+    float: right;
+}
+.btn-search .btnSearch {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    display: block;
+}
+.btn-search span {
+    background: #60a917 none repeat scroll 0 0;
+    color: #fff;
+    padding: 5px 8px;
+}
+#SearchForm .InputSearch {
+    color: #666;
+    font-size: 85%;
+    height: 20px;
+    margin-right: 3px;
+    width: 90%;
+}
+#SearchForm *:focus {
+    outline: 0 none;
+}
+.head-menu {
+    display: inline-block;
+    vertical-align: middle;
+}
+.submenu {
+    background: #ffffff none repeat scroll 0 0;
+    min-width: 220px;
+    position: absolute;
+    right: -5px;
+    top: 45px;
+    width: auto;
+    z-index: 1000;
+}
+.dropdown-menu {
+    position: relative;
+}
+.dropdown-menu .menu-icon {
+    border: medium none;
+    display: block;
+    text-decoration: none;
+}
+.dropdown-menu .menu-icon .icon-drop-menu {
+    border: medium none;
+    color: #fff;
+    font-size: 150%;
+}
+.SSCToolBar {
+}
+.SSCToolBar .InputToolBar {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #999;
+    margin: 0;
+    position: relative;
+    width: 320px;
+}
+.SSCToolBar .InputToolBar .NarrowToolBar {
+    position: absolute;
+    right: 10px;
+    top: -9px;
+}
+.NarrowToolBar .FormArrow {
+    height: 8px;
+    position: relative;
+    width: 18px;
+}
+.SSCNavBar .BarItem span {
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.FormArrow .NarrowBorder {
+    border-bottom: 8px solid #999;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    left: -1px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.FormArrow .NarrowBG {
+    border-bottom: 8px solid #fff;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 0;
+}
+.SSCToolBar .InputToolBar .SSCModul {
+    padding: 10px;
+}
+.SSCToolBar .InputToolBar .SSCModul li {
+    float: left;
+    width: 25%;
+}
+.SSCToolBar .InputToolBar .SSCModul .ModulItem {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.SSCToolBar .InputToolBar .SSCModul .ModulItem span {
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+}
+.SSCToolBar .InputToolBar .SSCModul .ModulItem p {
+    color: #333;
+    display: block;
+    font-family: WebFont !important;
+    font-size: 80% !important;
+    height: 30px;
+    margin-top: 10px !important;
+}
+.SSCModul .list-item {
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+.SSCModul .list-item li {
+    border-bottom: 1px dashed #ccc;
+    display: block;
+    float: inherit !important;
+    margin: 5px;
+    padding: 5px;
+    width: inherit !important;
+}
+.SSCModul .list-item li:last-child {
+    border-bottom: medium none;
+}
+.SSCModul .list-item li a {
+    text-decoration: none;
+}
+.SSCModul .list-item .MenuItem {
+    text-align: left;
+}
+.SSCModul .list-item .MenuItem h2 {
+    color: #333;
+    font-size: 90%;
+    font-weight: normal;
+}
+.SSCModul .list-item .MenuItem:hover {
+    background: #ececec none repeat scroll 0 0;
+}
+#divHeadMenu {
+    background: #ff6a00 none repeat scroll 0 0;
+    padding: 10px 5px;
+}
+.control-head-menu {
+    margin: 0 auto;
+    max-width: 1230px;
+    min-width: 320px;
+}
+.control-head-menu .control-left {
+    float: left;
+    position: relative;
+    width: 75%;
+}
+.control-head-menu .control-right {
+    float: right;
+    position: relative;
+    width: 20%;
+}
+.control-left .dropdown-menu {
+    display: inline-block;
+    position: inherit !important;
+    vertical-align: middle;
+}
+.control-left .menu-head-list {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.menu-head-list li, .menu-head-list span {
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+.menu-head-list a {
+    color: #fff;
+    font-size: 120%;
+    text-decoration: none;
+}
+.download {
+    background: #8dc63f none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    float: right;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.menu-head-list a p {
+    background: #8dc63f none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    padding: 5px 10px;
+}
+.menu-head-list a:hover {
+    text-decoration: underline;
+}
+.menu-head-list a:hover p {
+    background: #999 none repeat scroll 0 0;
+}
+.menu-head-list span {
+    margin: 0 5px;
+}
+.head-menu-icon {
+    text-decoration: none;
+}
+.head-menu-icon .icon-drop-menu {
+    border: medium none;
+    color: #fff;
+    font-size: 150%;
+}
+.head-submenu {
+    left: 0;
+    position: absolute;
+    top: 40px;
+    z-index: 1000;
+}
+.sub-list-menu {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.sub-list-menu .group-menu {
+    display: inline-block;
+    min-width: 280px;
+    vertical-align: top;
+    width: 33%;
+}
+.sub-list-menu .group-item {
+    padding: 5px;
+}
+.group-item h2 {
+    color: #fff;
+    font-family: BoldFont;
+    font-size: 110%;
+    font-weight: normal;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+.group-item h3 {
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    font-size: 120%;
+    font-weight: normal;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+.group-item ul {
+    margin-bottom: 15px;
+}
+.group-item li {
+    display: inline-block;
+    margin: 5px 0;
+}
+.group-item li a {
+    border-radius: 2px;
+    color: #666;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+.group-item li a:hover {
+    background: #1ba1e2 none repeat scroll 0 0;
+    color: #fff;
+}
+.control-right .sort-form {
+    margin-top: 5px;
+    text-align: right;
+}
+.sort-form h2 {
+    color: #fff;
+    display: inline-block;
+    font-size: 120%;
+    font-weight: normal;
+    vertical-align: middle;
+}
+.sort-form .dropdown-menu {
+    display: inline-block;
+    vertical-align: middle;
+}
+.sort-form .config-menu-icon {
+    margin-left: 10px;
+    text-decoration: none;
+}
+.config-menu-icon .icon-drop-menu {
+    border: medium none;
+    color: #fff;
+    font-size: 150%;
+}
+.config-submenu {
+    background: #fff none repeat scroll 0 0;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 1000;
+}
+.config-submenu .config-item {
+    padding: 10px;
+}
+.config-submenu .config-item ul {
+    min-width: 200px;
+}
+.config-item li {
+    border-bottom: 1px dashed #ccc;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+.config-item li a {
+    color: #666;
+    font-size: 120%;
+    padding: 0 5px;
+    text-decoration: none;
+}
+.config-item li:hover {
+    background: #ececec none repeat scroll 0 0;
+}
+.config-item li:last-child {
+    border-bottom: medium none;
+}
+footer {
+    height: inherit !important;
+}
+#divFooter {
+    margin: 0 auto;
+    max-width: 1230px;
+    min-width: 320px;
+    padding: 20px 0;
+    position: relative;
+}
+#CopyRight {
+    bottom: 20px;
+    color: #8dc63f;
+    font-size: 95%;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    text-align: right;
+    width: 500px;
+}
+#FooterLeft {
+    float: left;
+}
+#FooterRight {
+    float: right;
+    position: relative;
+}
+#FooterLeft p {
+    color: #fff;
+    font-size: 90%;
+    margin-bottom: 5px;
+}
+#FooterLeft p span {
+    margin: 0 10px;
+}
+#FooterLeft p a {
+    color: #8dc63f;
+    text-decoration: none;
+}
+#FooterLeft p a:hover {
+    text-decoration: underline;
+}
+#FooterRight ul {
+    text-align: right;
+}
+#FooterRight ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+#FooterRight ul span {
+    color: #fff;
+    display: inline-block;
+    margin: 0 10px;
+}
+#FooterRight ul li a {
+    display: block;
+    height: 30px;
+    text-decoration: none;
+    width: 30px;
+}
+#FooterRight ul li .FaceIcon {
+    background: rgba(0, 0, 0, 0) url("/Images/face_icon.png") no-repeat scroll 0 0;
+}
+#FooterRight ul li .YouIcon {
+    background: rgba(0, 0, 0, 0) url("/Images/youtube_icon.png") no-repeat scroll 0 0;
+}
+#FooterRight .FaceIcon:hover {
+    background: rgba(0, 0, 0, 0) url("/Images/face_icon_hover.png") no-repeat scroll 0 0;
+}
+#FooterRight .YouIcon:hover {
+    background: rgba(0, 0, 0, 0) url("/Images/youtube_icon_hover.png") no-repeat scroll 0 0;
+}

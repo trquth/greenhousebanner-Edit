@@ -1,0 +1,33 @@
+﻿@model greenhousebanner.Models.ViewModels.AccountViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ManageUserLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
+        {
+           <p style="color:red">@ViewBag.Error</p> 
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <label>Tên đăng nhập:</label>
+                    <input type="text" class="form-control" name="Account.Username">
+                    @Html.ValidationMessageFor(x => x.Account.Username)
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu:</label>
+                    <input type="password" class="form-control" name="Account.Password">
+                    @Html.ValidationMessageFor(x => x.Account.Password)
+                </div>              
+                <button type="submit" class="btn btn-default">Đăng nhập</button>
+                <button type="button" class="btn btn-default">Thoát</button>
+            </div>
+        }
+
+
+    </div>
+</div>
+

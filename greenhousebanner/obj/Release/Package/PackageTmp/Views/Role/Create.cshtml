@@ -1,0 +1,27 @@
+﻿@model greenhousebanner.Models.ViewModels.RoleViewModel
+    @{
+        ViewBag.Title = "Tạo mới quyền";
+        Layout = "~/Views/Shared/_ManageUserLayout.cshtml";
+    }
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            @using (Html.BeginForm("Create", "Role", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label>Tên quyền:</label>
+
+                        <input type="text" class="form-control" name="RoleName">
+                        @Html.ValidationMessageFor(x => x.RoleName)
+                    </div>
+                    <button type="submit" class="btn btn-default">Tạo mới</button>
+                    <a href="@Url.Action("Index","Role")" type="button" class="btn btn-default">Thoát</a>
+                </div>
+            }
+
+
+        </div>
+    </div>

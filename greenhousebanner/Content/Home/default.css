@@ -1,0 +1,176 @@
+﻿@charset "utf-8";
+/* CSS Document */
+html,body,p,h1,h2,h3,h4,h5,ul,ol,header,footer
+{
+	padding:0;
+	margin:0;
+}
+body
+{
+	font-family: WebFont;
+	font-size:13px;
+	color: #b3b3b3;
+	position: relative;
+	background:url(/images/bg_bold.jpg);
+}
+li
+{
+	list-style:none;
+}
+
+@font-face
+{
+	font-family: WebFont;src:url(/fonts/segoeui.ttf);
+}
+@font-face
+{
+	font-family: BoldFont;src:url(/fonts/segoeuib.ttf);
+}
+.HeadStyles
+{
+	font-family:LogoFont;
+	text-transform:uppercase;
+}
+.ClearFix
+{
+	zoom:1;
+}
+.ClearFix:after
+{
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+.red-text
+{
+	color:#C00;
+}
+.link
+{
+	text-decoration:none;
+	color:#666;
+}
+.link:hover
+{
+	color:#333;
+	text-decoration:underline;
+}
+.head-link
+{
+	color:#333;
+	text-decoration:none;
+}
+.head-link:hover
+{
+	color:#C00;
+}
+.red-link
+{
+	color:#C00;
+	text-decoration:none;
+}
+.red-link:hover
+{
+	text-decoration:underline;
+}
+.fade-text
+{
+	position:absolute;
+	width:80px;
+	height:100%;
+	background-image: -o-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1));
+	background-image: -webkit-gradient(linear,left top,right 	top,color-stop(0%,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,1)));
+	background-image: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1));
+	background-image: -moz-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1));
+	background-image: -ms-linear-gradient(left,rgba(255,255,255,0),rgba(255,255,255,1));
+	background: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,1));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#00ffffff',EndColorStr='#ffffff');
+	top:0px;
+	right:0px;
+}
+.box-raised 
+{
+	box-shadow: 0 12px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+#toTop
+{
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    display:none;
+    text-indent:-9999px;
+	width: 34px;
+	height: 18px;
+	background: url(/images/totop.png) no-repeat left top;
+}
+#toTop:hover
+{
+	outline: none;
+	background-position: right 0px;
+}
+.divPage
+{
+	clear: both;
+	padding-top: 50px;
+}
+.divPage ul
+{
+	margin: 0 !important;
+	padding: 0 !important;
+	display: inline-block;
+}
+.divPage ul li
+{
+	list-style: none;
+    padding: 0px !important;
+	margin: 5px !important;
+	float: left;
+	width: inherit !important;
+	height: inherit !important;
+    border:none !important;
+}
+.divPage ul li a
+{
+	padding: 5px 10px;
+	font-size: 90%;
+	color: #333;
+	background: #ececec;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	text-decoration: none;
+}
+.divPage ul li a:hover, .divPage .PageSeleted
+{
+	background: #069 !important;
+	color: #fff !important;
+}
+.web-update
+{
+	max-width:1230px;
+	min-width:320px;
+	margin:0 auto;
+}
+.web-update a
+{
+	text-decoration:none;
+	border:none;
+}
+.web-update img
+{
+	width:100%;
+	border:none;
+}
+.pagging li a.active > div {
+    color: #fff;
+    background-color: green;
+}
+.pagging li a > div {
+    background-color: #096;
+    color: #fff;
+    width: 30px;
+    padding: 5px 0px;
+    text-align: center;
+}

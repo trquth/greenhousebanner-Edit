@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<greenhousebanner.Models.Banner>
+@{
+    int count = 0;
+}
+@if (Model.Count() > 3)
+{
+    <div class="item  active">
+        <div class="banner_list_to">
+            <ul>
+                @foreach (var item in Model.Take(3))
+                {
+                    <li><a href="@item.Link"><img src="/Upload/Thumbnails/@item.BannerImage" /></a></li>
+                }
+            </ul>
+        </div>
+        <!--/row-fluid-->
+    </div>
+    if (Model.Count() > 4)
+    {
+        for (int i = 1; i < Model.Count() / 3; i++)
+        {
+            <div class="item">
+                <div class="banner_list_to">
+                    <ul>
+                        @foreach (var item in Model.Skip(i * 3))
+                        {
+                            if (count <= 2)
+                            {
+                                <li><a href="@item.Link"><img src="/Upload/Thumbnails/@item.BannerImage" /></a></li>
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            count = count + 1;
+                        }
+                    </ul>
+                </div>
+                <!--/row-fluid-->
+            </div>
+                        count = 0;
+        }
+
+    }
+}

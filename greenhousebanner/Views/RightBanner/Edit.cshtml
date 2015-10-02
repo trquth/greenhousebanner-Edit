@@ -1,0 +1,43 @@
+﻿@model greenhousebanner.Models.ViewModels.RightBannerViewModel
+@{
+    ViewBag.Title = "Chỉnh sữa thông tin banner bên phải";
+    Layout = "~/Views/Shared/_ManageUserLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm("Edit", "RightBanner", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label>Họ tên:</label>
+                    <input type="hidden" class="form-control" name="Id" value="@Model.Id">
+                    <input type="text" class="form-control" name="Name" value="@Model.Name">
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="form-group">
+                    <label>Tên đơn vị công tác:</label>
+                    <input type="text" class="form-control" name="Unit" value="@Model.Unit">
+                    @Html.ValidationMessageFor(x => x.Unit)
+                </div>
+                <div class="form-group">
+                    <label>Tên dự án:</label>
+                    <input type="text" class="form-control" name="PlanName" value="@Model.PlanName">
+                    @Html.ValidationMessageFor(x => x.PlanName)
+                </div>
+                <div class="form-group">
+                    <label>Link thông tin dự án:</label>
+                    <input type="text" class="form-control" name="Link" value="@Model.Link">
+                    @Html.ValidationMessageFor(x => x.Link)
+                </div> 
+                <button type="submit" class="btn btn-default">Lưu</button>
+                <a href="@Url.Action("Index","RightBanner")" class="btn btn-default ">Thoát</a>
+            </div>
+        }
+    </div>
+</div>
+
+
+

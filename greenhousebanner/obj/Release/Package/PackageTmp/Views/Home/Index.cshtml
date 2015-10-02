@@ -1,0 +1,68 @@
+﻿@model IEnumerable<greenhousebanner.Models.Banner>
+
+@{
+    Layout = null;
+    int i = 1;
+}
+<html>
+<head>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/css/shop-homepage.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/js/jquery.js"></script>
+    <script src="~/Scripts/js/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/js/moment.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/js/jquery-1.6.3.min.js"></script>
+</head>
+<body>
+
+    <h4 class="title_banner">CÁC VĂN BẢN PHÁP LÝ</h4>
+    <div id="myCarousel" class="vertical-slider carousel vertical slide" data-ride="carousel">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            @Html.Action("GetBannerTopLeft", new { type = 2 })
+        </div>
+    </div>
+
+    <h4 class="title_banner">MỘT SỐ HÌNH ẢNH CỦA CHƯƠNG TRÌNH</h4>
+
+    <div id="myCarousel" class="vertical-slider carousel vertical slide" data-ride="carousel">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            @Html.Action("GetBannerBottomLeft", new { type = 1 })
+        </div>
+
+    </div>
+
+
+
+
+    @section advertsement{
+
+        <style>
+            #divAdRight {
+                width: 122px;
+            }
+
+            #divAdLeft01 {
+                width: 122px;
+            }
+
+            .stickyBanner {
+                top: 0px;
+            }
+
+            .goToTop {
+                position: fixed;
+                top: 0;
+                height: 70px;
+                z-index: 1;
+            }
+        </style>
+    }
+</body>
+</html>

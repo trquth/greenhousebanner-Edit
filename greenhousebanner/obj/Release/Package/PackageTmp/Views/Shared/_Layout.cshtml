@@ -1,0 +1,131 @@
+﻿@using greenhousebanner.Infrastructures.Helper
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Admin Control Panel</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/Admin/default")
+    @Scripts.Render("~/java/googleajaxjquery")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckeditor/adapters/jquery.js"></script>
+    <script src="~/Scripts/ckeditor/styles.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".user-icon").click(function () {
+                var X = $(this).attr('id');
+
+                if (X == 1) {
+                    $(".user-menu").hide();
+                    $(this).attr('id', '0');
+                } else {
+
+                    $(".user-menu").show();
+                    $(this).attr('id', '1');
+                }
+
+            });
+            $(".user-menu").mouseup(function () {
+                return false;
+            });
+            $(".user-icon").mouseup(function () {
+                return false;
+            });
+            $(document).mouseup(function () {
+                $(".user-menu").hide();
+                $(".user-icon").attr('id', '');
+            });
+
+        });
+    </script>
+</head>
+@*@{
+    var sessionHelper = new SessionUserHelper();
+    var userEntity = sessionHelper.UserEntity();
+    if (userEntity == null)
+    {
+        sessionHelper.Logout();
+    }
+}*@
+<body>
+   
+    <div id="divMain">
+        <div id="divHeader">
+            <div class="head-form ClearFix">
+                <div class="img-logo"><img src="/images/Logo.png" /></div>
+                <div class="title-logo"><h1>Hệ thống quản lý Banner</h1></div>
+                <div class="SSCBarUser">
+                    @*<div class="BarItem"><span>@userEntity.Username</span></div>*@
+                    <div class="BarItem BarUser">
+                        <a href="#" class="user-icon"><i class="icon-user" style="font-size:20px;background:#fff;color:#096; padding:5px; border-radius:50%;"></i></a>
+                        <div class="SSCUserBar user-menu">
+                            <div class="InputUserInfo">
+                                <div class="divPersonal">
+                                    <div class="NarrowUser">
+                                        <div class="FormArrow">
+                                            <span class="NarrowBorder"></span>
+                                            <span class="NarrowBG"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="PersonalForm ClearFix">
+                                        <div class="PersonalLeft"><i class="icon-user-3 UserIcon"></i></div>
+                                        <div class="PersonalRight">
+                                            <p style="color:#000">@greenhousebanner.Security.SessionPersister.Username</p>
+                                            @*<h3>@userEntity.FullName</h3>
+                                            <h4>@userEntity.Email</h4>*@
+                                            @*<a href="#">Thiết lập tài khoản</a>*@
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="PersonalOut">
+                                    <a href="/Auth/Logout?Length=4" class="LogoutBtn">Đăng xuất</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divBody">
+            <div class="center-form">
+                <div class="main-body ClearFix">
+                    <div id="container">
+                        @RenderSection("menutab", required: false)
+                        <div class="main-form">
+                            @{
+                                if (Session["PageTransaction"] != null)
+                                {
+                                    PageTransactionSession Message = new PageTransactionSession();
+                                    Message = (PageTransactionSession)Session["PageTransaction"];
+                                    Session.Remove("PageTransaction");
+                                    <div class="alert @(Message.IsSuccess ? "alert-success" : "alert-danger")">@Message.Message</div>
+                                }
+                            }
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+
+                <div id="divFooter">
+                    <div class="footer-form">
+                        <div class="footer-info">
+                            <h5>Địa chỉ: 159 Ter Nam Kỳ Khởi Nghĩa, Phường 07, Quận 03, Tp.HCM</h5>
+                            <h5>Điện thoại: (08) 3930 2323 <span>|</span>Fax: (08) 3930 1828</h5>
+                            <h5><a target="_blank" href="http://www.thessc.vn">www.thessc.vn</a><span>-</span><a target="_blank" href="mailto:info@thessc.vn">Email: info@thessc.vn</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderSection("validate", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

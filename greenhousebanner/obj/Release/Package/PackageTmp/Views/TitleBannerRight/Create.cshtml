@@ -1,0 +1,29 @@
+﻿@model greenhousebanner.Models.ViewModels.TitelBannerViewModel
+@{
+    ViewBag.Title = "Tạo mới mới tên tiêu đề";
+    Layout = "~/Views/Shared/_ManageUserLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @using (Html.BeginForm("Create", "TitleBannerRight", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label>Tên tiêu đề:</label>
+
+                    <input type="text" class="form-control" name="Titel">
+                    @Html.ValidationMessageFor(x => x.Titel)
+                </div>
+                <button type="submit" class="btn btn-default">Tạo mới</button>
+                <a href="@Url.Action("Index", "TitleBannerRight")" type="button" class="btn btn-default">Trở về trang chủ</a>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+

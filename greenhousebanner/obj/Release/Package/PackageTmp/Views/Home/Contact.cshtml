@@ -1,0 +1,31 @@
+﻿@using greenhousebanner.Infrastructures.Helper
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<div id="divNewsPage">
+    <div class="divFullMain">
+        <div class="divHeadForm ClearFix">
+            <p class="HeadBlank" style="padding-left:30px;">
+                <span style="padding:10px;">Liên hệ</span>
+            </p>
+        </div>
+
+        <div id="divContactPage" class="ClearFix">
+            <div id="divContactMap">
+                <h1>Công ty Cổ phần Văn Hóa Ngôi Nhà Xanh</h1>
+                <p>159 Ter Nam Kỳ Khởi Nghĩa, Q.1, Tp.HCM</p>
+                @*<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?t=m&amp;msa=0&amp;msid=214836278176375252488.0004dda015d0454bad30e&amp;ie=UTF8&amp;ll=10.784281,106.692502&amp;spn=0.005828,0.010568&amp;iwloc=0004dda01965ed56ed338&amp;output=embed"></iframe>*@
+            </div>
+            <div id="divContactForm">
+                <h1>Gửi thông tin đến chúng tôi</h1>
+                <div id="ContactForm">
+                    @using (Html.BeginForm("Contact","Home", FormMethod.Post))
+                    {
+                        <p>@Html.Raw(Html.GenerateCaptcha())</p>
+                        <p><input type="submit" value="Gửi đi" class="ButtonForm"/></p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

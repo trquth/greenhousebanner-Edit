@@ -1,0 +1,133 @@
+﻿@model IEnumerable<greenhousebanner.Models.RightBanner>
+
+@{
+    Layout = null;
+    int count = 0;
+}
+<html>
+<head>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/css/shop-homepage.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/js/jquery.js"></script>
+    <script src="~/Scripts/js/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/js/moment.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/js/jquery-1.6.3.min.js"></script>
+</head>
+<body>
+    <div id="divAdRight" class="stickyBanner">
+        @Html.Action("GetTitelBanner")
+        <div id="myCarousel" class="vertical-slider carousel vertical slide" data-ride="carousel">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                @if (Model != null)
+                {
+                    if (Model.Count() >= 5)
+                    {
+                        <div class="item active">
+                            <div class="banner_list_to">
+                                <ul>
+                                    @foreach (var item in Model.Take(5))
+                                    {
+                                        <li>
+                                            <p class="title_cate_banner">@item.Name</p>
+                                            <p>Đơn vị: @item.Unit</p>
+                                            <p>
+                                                <a href="@item.Link">@item.PlanName</a>
+                                            </p>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            <!--/row-fluid-->
+                        </div>
+                    }
+                    if (Model.Count() >= 10)
+                    {
+                        for (int i = 1; i < Model.Count() / 5; i++)
+                        {
+                            <div class="item">
+                                <div class="banner_list_to">
+                                    <ul>
+                                        @foreach (var item in Model.Skip(i * 5))
+                                        {
+                                            if (count < 5)
+                                            {
+                                                <li>
+                                                    <p class="title_cate_banner">@item.Name</p>
+                                                    <p>Đơn vị: @item.Unit</p>
+                                                    <p>
+                                                        <a href="@item.Link">@item.PlanName</a>
+                                                    </p>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                break;
+                                            }
+                                            count = count + 1;
+                                        }
+
+                                    </ul>
+                                </div>
+                                <!--/row-fluid-->
+                            </div>
+                                        count = 0;
+                        }
+                    }
+                }
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    @section advertsement{
+
+        <style>
+            #divAdRight {
+                width: 122px;
+            }
+
+            #divAdLeft01 {
+                width: 122px;
+            }
+
+            .stickyBanner {
+                top: 0px;
+            }
+
+            .goToTop {
+                position: fixed;
+                top: 0;
+                height: 70px;
+                z-index: 1;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+
+                $('.btn-vertical-slider').on('click', function () {
+
+                    if ($(this).attr('data-slide') == 'next') {
+                        $('#myCarousel').carousel('next');
+                    }
+                    if ($(this).attr('data-slide') == 'prev') {
+                        $('#myCarousel').carousel('prev')
+                    }
+
+                });
+                speech: 200
+            });
+        </script>
+    }
+</body>
+</html>

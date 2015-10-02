@@ -1,0 +1,84 @@
+﻿@using greenhousebanner.Infrastructures.Helper
+@model IEnumerable<greenhousebanner.Models.Banner>
+
+@{
+    ViewBag.Title = "Quản lý Banner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int pageindex = 1;
+    if (Request.QueryString["page"] != null)
+    {
+        pageindex = int.Parse(Request.QueryString["page"].ToString());
+    }
+    int i = SerialNumber.CurrentIndex(pageindex);
+    int total = int.Parse(ViewBag.Total.ToString());
+}
+@section menutab{
+    <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="@Url.Action("Index","Banner")"><span class="fa fa-flag"> </span>  Quản lí Banner</a></li>
+            <li><a href="@Url.Action("Index","User")"><span class="fa fa-users"> </span>  Quản lí Admin</a></li>
+            <li><a href="@Url.Action("Index","Role")"><span class="fa fa-user-plus"> </span>  Quản lí Quyền</a></li>
+        </ul>
+    </div>
+}
+<h1 class="main-head-form">Danh sách Banner</h1>
+<div class="ButtonBar ClearFix">
+    <div class="bar-left">
+        <a class="link-btn" href="@Url.Action("Create")">Thêm mới</a>
+    </div>
+</div>
+
+<div class="full-page ClearFix">
+    <div class="table-form">
+        <table class="table-control" cellpadding="0" cellspacing="0" width="100%" border="1">
+            <tr class="row-head">
+                <th style="width: 3%">STT</th>
+                <th>
+                    Tên Banner
+                </th>
+                <th>
+                    Hình ảnh
+                </th>
+                <th>
+                    Vị trí
+                </th>
+                <th style="width: 7%">Chức năng</th>
+            </tr>
+            @if (Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BannerName)
+                        </td>
+                        <td>
+                            <img src="/Upload/Thumbnails/@item.BannerImage" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Position)
+                        </td>
+                        <td align="center">
+                            @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                    i = i + 1;
+                }
+                <tr>
+                    <td colspan="5" align="left">
+                        @Html.Raw(Paging.Page(pageindex, total))
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">Chưa có dữ liệu</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+﻿@model IEnumerable<greenhousebanner.Models.Role>
+<select class="form-control" name="IdRole">
+    <option value="">---Vui lòng chọn quyền--</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.RoleName</option>
+    }
+</select>

@@ -1,0 +1,324 @@
+
+.container {
+    font-family: arial;
+    margin: auto;
+    position: relative;
+    width: 1050px;
+}
+.txthoten {
+    left: 273px;
+    position: absolute;
+    top: 288px;
+}
+.txtdiachitamtru {
+    left: 273px;
+    position: absolute;
+    top: 368px;
+}
+.txtdiachithuongtru {
+    left: 273px;
+    position: absolute;
+    top: 327px;
+}
+.txtdonvi {
+    left: 280px;
+    position: absolute;
+    top: 409px;
+}
+.txtcmnd {
+    left: 347px;
+    position: absolute;
+    top: 451px;
+}
+.txtsdt {
+    left: 275px;
+    position: absolute;
+    top: 493px;
+}
+.txtEmail {
+    left: 511px;
+    position: absolute;
+    top: 490px;
+}
+.txtyeucau {
+    left: 130px;
+    line-height: 2.5;
+    max-width: 793px;
+    position: absolute;
+    top: 1846px;
+}
+.check48m2 {
+    left: 189px;
+    position: absolute;
+    top: 595px;
+}
+.check50m2 {
+    left: 374px;
+    position: absolute;
+    top: 595px;
+}
+.check58m2 {
+    left: 565px;
+    position: absolute;
+    top: 595px;
+}
+.check62m2 {
+    left: 754px;
+    position: absolute;
+    top: 595px;
+}
+.check66m2 {
+    left: 189px;
+    position: absolute;
+    top: 641px;
+}
+.check72m2 {
+    left: 374px;
+    position: absolute;
+    top: 641px;
+}
+.check78m2 {
+    left: 564px;
+    position: absolute;
+    top: 641px;
+}
+.check80m2 {
+    left: 189px;
+    position: absolute;
+    top: 708px;
+}
+.check100m2 {
+    left: 374px;
+    position: absolute;
+    top: 708px;
+}
+.check150m2 {
+    left: 564px;
+    position: absolute;
+    top: 708px;
+}
+.checkttanbinh {
+    position: absolute;
+    right: 234px;
+    top: 835px;
+}
+.checkbinhtan {
+    position: absolute;
+    right: 234px;
+    top: 865px;
+}
+.checktanphu{
+    position: absolute;
+    right: 234px;
+    top: 896px;
+}
+.checkgovap {
+    position: absolute;
+    right: 234px;
+    top: 924px;
+}
+.checkbinhthanh {
+    position: absolute;
+    right: 234px;
+    top: 951px;
+}
+.checkthuduc {
+    position: absolute;
+    right: 234px;
+    top: 980px;
+}
+.checkq8 {
+    position: absolute;
+    right: 234px;
+    top: 1007px;
+}
+.checkq9 {
+    position: absolute;
+    right: 234px;
+    top: 1036px;
+}
+.checkq7 {
+    position: absolute;
+    right: 234px;
+    top: 1064px;
+}
+.checkq2{
+    position: absolute;
+    right: 234px;
+    top: 1093px;
+}
+.checkq10 {
+    position: absolute;
+    right: 234px;
+    top: 1120px;
+}
+.checkq6 {
+    position: absolute;
+    right: 234px;
+    top: 1150px;
+}
+.check100tr {
+    left: 189px;
+    position: absolute;
+    top: 1247px;
+}
+.check200tr {
+    left: 374px;
+    position: absolute;
+    top: 1247px;
+}
+.check250tr {
+    left: 560px;
+    position: absolute;
+    top: 1247px;
+}
+.check300tr {
+    left: 750px;
+    position: absolute;
+    top: 1247px;
+}
+.check400tr {
+    left: 197px;
+    position: absolute;
+    top: 1500px;
+}
+.check500tr {
+    left: 382px;
+    position: absolute;
+    top: 1500px;
+}
+.check5400tr {
+    left: 635px;
+    position: absolute;
+    top: 1500px;
+}
+.check5500tr {
+    position: absolute;
+    right: 238px;
+    top: 1500px;
+}
+.check700tr {
+    left: 197px;
+    position: absolute;
+    top: 1537px;
+}
+.check800tr {
+    left: 382px;
+    position: absolute;
+    top: 1537px;
+}
+.check5700tr {
+    position: absolute;
+    right: 403px;
+    top: 1537px;
+}
+.check5800tr {
+    position: absolute;
+    right: 238px;
+    top: 1537px;
+}
+.check2tr {
+    left: 189px;
+    position: absolute;
+    top: 1642px;
+}
+.check3tr {
+    left: 374px;
+    position: absolute;
+    top: 1642px;
+}
+.check4tr {
+    left: 565px;
+    position: absolute;
+    top: 1642px;
+}
+.check6tr {
+    left: 750px;
+    position: absolute;
+    top: 1642px;
+}
+.check7tr {
+    left: 189px;
+    position: absolute;
+    top: 1681px;
+}
+.check8tr {
+    left: 374px;
+    position: absolute;
+    top: 1682px;
+}
+.check9tr {
+    position: absolute;
+    right: 473px;
+    top: 1682px;
+}
+.check10tr{
+    position: absolute;
+    right: 288px;
+    top: 1682px;
+}
+.check3th {
+    left: 189px;
+    position: absolute;
+    top: 1784px;
+}
+.check6th {
+    left: 374px;
+    position: absolute;
+    top: 1784px;
+}
+.check9th {
+    left: 565px;
+    position: absolute;
+    top: 1784px;
+}
+.check1nam {
+    left: 750px;
+    position: absolute;
+    top: 1784px;
+}
+.check2nam {
+    position: absolute;
+    right: 136px;
+    top: 1784px;
+}
+.txtmk1 {
+    left: 300px;
+    position: absolute;
+    top: 1274px;
+}
+.checkmk1 {
+    left: 189px;
+    position: absolute;
+    top: 1274px;
+}
+.txtmk2 {
+    left: 306px;
+    position: absolute;
+    top: 1576px;
+}
+.checkmk2 {
+    left: 198px;
+    position: absolute;
+    top: 1573px;
+}
+.txtmk3 {
+    left: 741px;
+    position: absolute;
+    top: 1575px;
+}
+.checkmk3 {
+    position: absolute;
+    right: 404px;
+    top: 1574px;
+}
+.txtmk4 {
+    left: 300px;
+    position: absolute;
+    top: 1714px;
+}
+.checkmk4 {
+    left: 189px;
+    position: absolute;
+    top: 1712px;
+}

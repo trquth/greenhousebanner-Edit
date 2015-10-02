@@ -1,0 +1,128 @@
+﻿
+@model PagedList.IPagedList<greenhousebanner.Models.TitleRightBanner>
+@using PagedList.Mvc;
+@using greenhousebanner.Infrastructures.Helper;
+@{
+    ViewBag.Title = "Danh sách tiêu đề";
+    Layout = "~/Views/Shared/_ManageUserLayout.cshtml";
+    var account = System.Web.HttpContext.Current.Session["Account"] as greenhousebanner.Models.ViewModels.Account;
+    string role = account.Roles.First().ToString();
+}
+@if (role.Equals("Admin"))
+{
+    @section menutab{
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="@Url.Action("Index", "Banner")"><span class="fa fa-flag"> </span>  Quản lí Banner bên trái</a></li>
+                <li><a href="@Url.Action("Index", "RightBanner")"><span class="fa fa-flag"> </span>  Quản lí Banner bên phải</a></li>
+                <li><a href="@Url.Action("Index", "TitleBannerRight")"><span class="fa fa-flag"> </span>  Quản lí tiêu đề Banner bên phải</a></li>
+                <li><a href="@Url.Action("Index","User")"><span class="fa fa-users"> </span>  Quản lí Admin</a></li>
+                <li><a href="@Url.Action("Index","Role")"><span class="fa fa-user-plus"> </span>  Quản lí Quyền</a></li>
+            </ul>
+        </div>
+    }
+}
+else
+{
+    @section menutab{
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="@Url.Action("Index", "Banner")"><span class="fa fa-flag"> </span>  Quản lí Banner bên trái</a></li>
+                <li><a href="@Url.Action("Index", "RightBanner")"><span class="fa fa-flag"> </span>  Quản lí Banner bên phải</a></li>
+                <li><a href="@Url.Action("Index", "TitleBannerRight")"><span class="fa fa-flag"> </span>  Quản lí tiêu đề Banner bên phải</a></li>
+            </ul>
+        </div>
+    }
+}
+<div class="col-sm-12 hidden-xs">
+    <h1> Danh sách tiêu đề <small></small></h1>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index","User")">
+                    Admin
+                </a>
+            </li>
+            <li class="active">
+                Danh sách tiêu đề
+            </li>
+        </ol>
+    </div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: PAGE CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+
+        <!-- start: RESPONSIVE TABLE PANEL -->
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <a href="@Url.Action("Create")" class="new-contributor btn btn-primary">Thêm tiêu đề mới<i class="fa fa-plus fa fa-white"></i></a>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive" id="contributors">
+                    <table class="table table-bordered table-hover" id="sample-table-1">
+                        <thead>
+                            <tr>
+                                <th class="center">Tên tiêu đề</th>
+                                <th class="center">Trạng thái</th>
+                                <th class="center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td>
+                                        @item.Title
+                                    </td>                                 
+                                    <td class="center">
+
+                                        @if (item.IsActive == true)
+                                        {
+
+                                            <a href="@Url.Action("Active", new { id = item.ID })" class="btn btn-primary btn-circle"><i class="fa fa-check"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Url.Action("Active", new { id = item.ID })" class="btn btn-default btn-circle"><i class="fa fa-check"></i></a>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", new { id = item.ID })">Sửa</a>
+                                        <a href="@Url.Action("Delete", new { id = item.ID })" class="delete del ">Xoá</a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/bootbox/bootbox.min.js"></script>
+    <script type="text/javascript">
+        $(".del").click(function (e) {
+
+            e.preventDefault();
+
+            var location = $(this).attr('href');
+
+            bootbox.confirm("Bạn có chắc là muốn tiêu đề này.", function (confirmed) {
+                if (confirmed) {
+                    window.location.replace(location);
+                }
+
+            });
+        });
+    </script>
+
+}

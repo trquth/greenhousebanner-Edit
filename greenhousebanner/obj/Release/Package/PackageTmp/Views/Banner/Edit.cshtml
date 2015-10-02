@@ -1,0 +1,136 @@
+﻿@model greenhousebanner.Models.Banner
+
+@{
+    ViewBag.Title = "Chỉnh sửa Banner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="main-head-form">Chỉnh sửa Banner</h1>
+
+<div class="full-page ClearFix">
+    <div class="table-form">
+        @using (Html.BeginForm("Edit", "Banner", FormMethod.Post, new { EncType = "multipart/form-data", @id = "createbanner"}))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true)
+                    <div class="two-column ClearFix">
+                        <div class="two-column-form">
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Tên Banner</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.BannerName, new { @style = "width:100%" })
+                                    @Html.ValidationMessageFor(model => model.BannerName)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two-column-form">
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Vị trí</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.Position, new { @style = "width:100%" })
+                                    @Html.ValidationMessageFor(model => model.Position)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two-column ClearFix">
+                        <div class="two-column-form">
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Hình ảnh Banner</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(model => model.BannerImage, new { @type = "file", @style = "width:100%" })
+                                    @Html.ValidationMessageFor(model => model.BannerImage)
+                                    <label>@Model.BannerImage</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="two-column-form">
+                            <div class="form-group">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10">
+                                    @Html.CheckBoxFor(model => model.IsActive, new { @style = "width:100%", @id = "IsActive" })
+                                    <label for="IsActive">Hiển thị</label>
+                                    @Html.ValidationMessageFor(model => model.IsActive)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two-column clearfix">
+                        <div class="form-group">
+                            <label class="control-label col-md-1">Link bài viết</label>
+                            <div class="col-md-11">
+                                <input type="text" name="Link" data-rule-required="true" data-msg-required="Nhập link bài viết" data-rule-minlength="3" data-msg-minlength="Link bài viết không hợp lệ." style="width:100%"  value="@Model.Link"/>
+                                @*@Html.ValidationMessageFor(model => model.Link)*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two-column clearfix">
+                        <div class="form-group">
+                            <label class="control-label col-md-1">Loại banner</label>
+                            <div class="col-md-11">
+                                <select class="form-control" name="TypeBanner" data-rule-required="true" data-msg-required="Chọn loại banner.">
+                                    @if (Model.TypeBanner == 1)
+                                    {
+                                        <option value="1" selected>Tin ảnh</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="1">Tin ảnh</option>
+                                    }
+                                    @if (Model.TypeBanner == 2)
+                                    {
+                                        <option value="2" selected>Văn bản pháp lý</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="2">Văn bản pháp lý</option>
+                                    }                                                                                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two-column clearfix">
+                        <div class="form-group">
+                            <label class="control-label col-md-1">Mô tả</label>
+                            <div class="col-md-11">
+                                @Html.TextAreaFor(model => model.BannerDescription, new { @style = "width:100%" })
+                                @Html.ValidationMessageFor(model => model.BannerDescription)
+                                <script>
+                                    CKEDITOR.replace('BannerDescription');
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-1 col-md-11">
+                            <input type="submit" value="Lưu chỉnh sửa" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="footer-info">
+            @Html.ActionLink("Trở lại danh sách", "Index")
+        </div>
+
+    </div>
+</div>
+
+@section validate{
+    <script src="~/Scripts/jquery-1.11.1.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        $("#createbanner").validate();
+    </script>
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
